@@ -1,4 +1,13 @@
-const numIdenticalPairs = function (nums) {
+const numIdenticalPairsRefactor = function (nums) {
+  // create freq object to store each element's frequency
+  // loop over nums
+  //      if nums in freq increment by one
+  //      if nums not in freq create one and set it to 1
+  // create count and set it to 0
+  //  for each frequnce in freq object values,do its sumRange(val -1)
+  // increatmet count by sumrange
+
+  // return 0
   const freq = {};
   for (let num of nums) {
     if (freq[num]) {
@@ -9,7 +18,6 @@ const numIdenticalPairs = function (nums) {
   }
 
   let count = 0;
-  let values = Object.values(freq);
 
   for (let val of Object.values(freq)) {
     count += sumRange(val - 1);
@@ -21,6 +29,7 @@ const numIdenticalPairs = function (nums) {
     // return num + sumRange(num - 1)
     return (num * (num + 1)) / 2;
   }
-
+  // time cmpx : 0(n)
+  // space : 0(n)
   return count;
 };
